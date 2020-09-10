@@ -29,8 +29,10 @@ jobs:
       run: |
         pip3 install -r requirements.txt
         ./run.sh  || exit $(($? - 255))
-        git config --global user.email "shinji.mtsmt@gmail.com"
-        git config --global user.name "Shinji Matsumoto (cron job)"
+        #git config --global user.email "shinji.mtsmt@gmail.com"
+        #git config --global user.name "Shinji Matsumoto (cron job)"
+        git config --global user.email "aida@shizentai-factory.com"
+        git config --global user.name "Takeshi Aida (cron job)"
         git remote -v
         git status
         git fetch origin
