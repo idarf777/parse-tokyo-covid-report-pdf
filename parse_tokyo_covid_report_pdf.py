@@ -10,6 +10,7 @@ import argparse
 from collections import defaultdict
 import logging
 import os
+import re
 
 from pdfminer.converter import PDFPageAggregator
 from pdfminer.layout import LAParams, LTContainer, LTTextLine
@@ -44,7 +45,8 @@ def main():
     lines = defaultdict(list)
     for table_text in tabel_texts:
         t_list = table_text.get_text().strip().split()  # たまに一つの LTTextLine に複数テキストがあるので split
-        lines[table_text.y1].extend(t_list)
+        t_list_f = list( filter( lambda v: re.match( '\(.+\)', v ) == None, t_list ) ) # 回復者数の記述を排除
+        lines[table_text.y1].extend(t_list_f)
 
     # 各行で対応する要素を出力
     for k1, k2 in pairs(lines):
