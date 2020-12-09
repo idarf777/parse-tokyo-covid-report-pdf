@@ -1,0 +1,6 @@
+/env
+/.vs
+/.idea
+/parse-tokyo-covid-report-pdf
+*.pyproj
+*.sln
