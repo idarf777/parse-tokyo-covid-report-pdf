@@ -20,7 +20,7 @@ from pdfminer.pdfpage import PDFPage
 logger = logging.getLogger(__name__)
 
 TABLE_START_TEXT = "千代田"
-TABLE_END_TEXT = "今後の調査の状況"
+TABLE_END_TEXT = "は感染者のうち"
 
 
 def main():
